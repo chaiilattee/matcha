@@ -1,260 +1,355 @@
-<!DOCTYPE html PUBLIC>
+<!DOCTYPE html>
 
-<!-- @NUCLEARTHEMES ON TUMBLR || PLEASE DON'T DELETE CREDIT -->
-
-<!-- 
-|| CREDITS ||
-Custom tooltips by Atomiks >> https://atomiks.github.io/tippyjs/
-Fonts from Google >> https://fonts.google.com/
-Placeholders from Unsplash >> https://unsplash.com/
--->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <html>
  
 <head>
  
-<title>{squeezeme;don't teaseme} / title</title> <!-- page title -->
-
+<title>{Title}</title>
 
 <link rel="shortcut icon" href="{Favicon}">
 
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i|Covered+By+Your+Grace:400,400i,700,700i|Lora:400,400i,700,700i" rel="stylesheet">
+<!-- 'Honey' by vitaminholland -->
 
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- Google Fonts Script -->
+ 
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Styled Tooltips Script -->
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+ 
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+ 
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:90,
+tip_fade_speed:600,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+ 
+<!-- Font Awesome Script -->
+ 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 <style type="text/css">
-
-/* ----------------------------------------------------------------------- */
-/* --------------------------- custom tooltips --------------------------- */
-
-.tippy-tooltip.custom-theme {
-    background-color: #ffffff;
-    border-radius: 0px;
-    color: #3bc6ff;
-    font-family: inherit;
-    margin-bottom: 10px;
-    text-align: center;
+ 
+.tmblr-iframe--app-cta-button {
+display: none!important;
+}
+ 
+::-webkit-scrollbar-thumb:vertical {
+background: #7B9B9D;
+}
+ 
+::-webkit-scrollbar {
+width: 1px;
+}
+ 
+::selection {
+background: #C15A7A;
+color: white;
+}
+ 
+::-moz-selection {
+background: #C15A7A;
+color: white;
+}
+ 
+#s-m-t-tooltip {
+background: #ffffff;
+border-radius: 5px;
+color: #7b9b9d;
+font-size: 0.8rem;
+margin-top: 30px;
+padding: 5px;
+text-align: center;
+text-transform: lowercase;
+z-index: 999999999999999999999999999999999999;
+}
+ 
+body {
+background: #7b9b9d;
+color: #000000;
+cursor:url(https://xatimg.com/image/fjorAXinjAnt.gif), auto;
+font-family: 'Quicksand', sans-serif;
+font-size: 0.9rem;
+font-style: normal;
+font-weight: 400;
+hyphens: auto;
+letter-spacing: 1px;
+margin: 0px;
+text-align: left;
+text-transform: none;
+word-wrap: break-word;
+}
+ 
+a {
+color: #E17BA2;
+text-decoration:  none;
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+}
+ 
+a:hover {
+color: #E17BA2;
+}
+ 
+b {
+font-weight: 700;
 }
 
-/* ----------------------------------------------------------------------- */
-/* -------------------- custom selection & scrollbar --------------------- */
+h1 {
+font-size: 1.5rem;
+font-weight: bold;
+margin-block-start: 0em;
+text-transform: lowercase;
+}
 
-::-moz-selection {background: #6A94AB; color: #6A94AB;}
-::selection {background: #6A94AB; color: #6A94AB;}
-
-::-webkit-scrollbar-thumb {background: #DBF1F4;}
-::-webkit-scrollbar {background: #DBF1F4; width: 5px;}
-
-* {margin:0; padding:0;}
-
-/* ----------------------------------------------------------------------- */
-/* ---------------------------- large blocks ----------------------------- */
-
-body {
-    background:#7DCCFF;                /* background color */
-    color: #def1f9;                     /* text color */
-    font-family: Fira Sans;             /* font */
-    font-size: 14px;                    /* font size */
-    text-align: justify;                /* text align */
+h2 {
+font-size: 1rem;
+font-weight: bold;
+margin-block-start: 0em;
+}
+ 
+blockquote {
+border-left: 1px solid #E17BA2;
+margin: 5px;
+padding-left: 5px;
 }
 
 #container {
-    background:#7DCCFF;                /* container background color */
-    height: 550px;
-    left: 50%;
-    margin-bottom: 40px;
-    overflow: none;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    width: 700px;
+left: calc(50% - 425.5px);
+position: fixed;
+top: calc(50% - 250px);
+width: 871px;
 }
 
-#header {                               /* 700 x 180 */
-    background-color:#7DCCFF;
-    height: 180px;
-    width: 700px;
+.main-wrapper {
+align-items: stretch;
+display: flex;
+width: 871px;
 }
 
-#content {                              /* container content below header */
-    height: 290px;
-    margin-top: 40px;
-    overflow: none;
-    padding: 20px;
-    width: 660px;
+#links-wrapper {
+background: #f7eed2;
+border-right: 1px solid #7B9B9D;
+align-items: baseline;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 500px;
+width: 70px;
 }
 
-/* ----------------------------------------------------------------------- */
-/* -------------------------------- text --------------------------------- */
-
-h1 {                                    /* main title */
-    color: #D3EEFB;
-    font-family: Covered By Your Grace;
-    font-size: 2.5em;
-    font-style: cursive;
-    font-weight: bold;
-    position: fixed;
-    right: 2%;
-    top: 33%;
-    z-index: 999;
+.links {
+margin-left: auto;
+margin-right: auto;
+margin-top: 16.805px;
+width: 34.39px;
 }
 
-h2 {                                    /* block titles */
-    background-color: #def1f9;
-    color: #7DCCFF;
-    font-family: Lora;
-    font-size: 1.2em;
-    font-weight: normal;
-    padding: 10px;
-    text-align: center;
-    width: 252px;
+.links a {
+background: #7B9B9D;
+border-radius: 5px;
+color: #ffffff;
+display: inline-block;
+font-size: 0.9rem;
+font-variant: normal;
+height: 0.9rem;
+line-height: 1;
+margin-bottom: 10px;
+padding: 10px;
+text-rendering: auto;
+width: 0.9rem;
 }
 
-a {
-    color: #c2eafc;                     /* link color */
-    text-decoration: none;
+.links a:hover {
+color: #7B9B9D;
 }
 
-a:hover {   
-    color: #c2eafc;                     /* link hover color */
-    transition: 0.4s;
+.links a:last-of-type {
+margin-bottom: 0px;
 }
 
-b {                                     /* bold text */
-    color: #c2eafc;
+.avatar-image {
+height: 40px;
+margin-bottom: 16.805px;
+margin-left: auto;
+margin-right: auto;
+width: 40px;
 }
 
-i {                                     /* italic text */
-    color: #c2eafc;
+.avatar-image img {
+border-radius: 5px;
+height: 40px;
+width: 40px;
 }
 
-/* ----------------------------------------------------------------------- */
-/* --------------------------- layout content ---------------------------- */
-
-#picture {                              /* icon */
-    border-radius: 100%;
-    left: 43%;
-    position: fixed;
-    top: 23%;
-    width: 100px;
-    z-index: 999;
+.box-outer {
+background: #f7eed2;
+align-items: center;
+display: flex;
+height: 500px;
+width: 400px;
 }
 
-#picture:hover {                        /* icon hover */
-    cursor: cell;
-    transform: scale(1.1);
-    transition: 0.4s;
-    -webkit-filter: contrast(110%);
+.box-inner {
+padding: 50px;
+max-height: 400px;
+overflow-y: scroll;
+width: 300px;
 }
 
-#leftblock {                            /* container for left content */
-    float: left;
-    height: 290px;
-    width: 270px;
+.about-icon-image {
+height: 100px;
+margin-left: auto;
+margin-right: auto;
+width: 100px;
 }
 
-#rightblock {                           /* container for right content */
-    float: right;
-    height: 290px;
-    width: 270px;
+.about-icon-image img {
+border-radius: 5px;
+height: 100px;
+width: 100px;
 }
 
-.borderblock {                          /* bordered blocks of content */
-    border: 1px solid #D3EEFB;
-    border-top: none;
-    height: 225px;
-    padding: 10px;
-    width: 250px;
+.about-title {
+font-weight: bold;
+margin-top: 20px;
+text-align: center;
+text-transform: lowercase;
 }
 
-#aesthetic {                            /* container for middle colors */
-    float: left;
-    height: 288px;
-    margin-left: 23px;
-    width: 72px;
+.about-content {
+margin-top: 15px;
+text-transform: lowercase;
 }
 
-/* ----------------------------------------------------------------------- */
-/* ------------------------------- content ------------------------------- */
-
-.colors {                               /* color blocks */
-    background: blue;
-    height: 72px;
-    width: 72px;
+.likes-dislikes-wrapper {
+align-items: stretch;
+border-top: 1px solid#7B9B9D;
+display: flex;
+margin-top: 15px;
+padding-top: 15px;
+width: 300px;
 }
 
-/* change colors here! :D */
-
-#color1 {background-color:#54B4F5;}
-#color2 {background-color:#84ceff;}
-#color3 {background-color:#a3dbff;}
-#color4 {background-color:#c4efff;}
-
-#left {                                 /* left column */
-    border-right: 1px solid #ffffff;
-    float: left;
-    font-weight: bold;
-    height: 120px;
-    line-height: 20px;
-    margin-right: 20px;
-    padding-right: 20px;
-    text-transform: normal;
-    width: 104px;
+.likes-wrapper {
+text-transform: lowercase;
+width: 140px;
 }
 
-#right {                                /* right column */
-    float: left;
-    height: 120px;
-    line-height: 20px;
-    width: 105px;
+.dislikes-wrapper {
+margin-left: 20px;
+text-transform: lowercase;
+width: 140px;
 }
 
-#bio {                                  /* bio container */
-    float: left;
-    height: 90px;
-    margin-top: 15px;
-    overflow: auto;
-    width: 250px;
-    -ms-overflow-style: none;
+.about-image {
+background-image: url("https://xatimg.com/image/zbw1CQQrBokN.gif");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 500px;
+width: 400px;
 }
 
-#bio::-webkit-scrollbar {
-    display: none;
+.info {
+background: rgba(255, 255, 255, 0.7);
+border-radius: 5px;
+bottom: 25px;
+font-size: 0.9rem;
+margin-left: 25px;
+padding: 15px;
+position: absolute;
+text-transform: uppercase;
+width: 320px;
 }
-
-.links {                                /* links in right block */
-    background-color: #a5ddf7;
-    color: #ffffff;
-    display: inline-block;
-    margin-bottom: 10px;
-    padding: 10px;
+ 
+.info li {
+border-bottom: 1px solid #55555;
+list-style-type: none;
+padding-bottom: 10px;
+padding-top: 10px;
 }
-
-.links:hover {                          /* hover links */
-    background-color: #c2eafc;
-    color: #ffffff;
-    transition: 0.4s;
+ 
+.info li:first-child {
+padding-top: 0px;
 }
-
-/* ----------------------------------------------------------------------- */
-/* ------------------------------- credits ------------------------------- */
+ 
+.info li:last-child {
+border-bottom: none;
+padding-bottom: 0px;
+}
 
 #credit {
-    color: #ffffff;
-    bottom: 0;
-    display: inline;
-    font-style: italic;
-    margin: 10px;
-    position: fixed;
-    right: 0;
+bottom: 20px;
+font-size: 0.9rem;
+height: 36px;
+position: fixed;
+right: 20px;
+text-transform: uppercase;
+z-index: 1;
+width: auto;
+}
+ 
+#credit a {
+background: #CC9B98;
+border: 1px solid #eeeeee;
+border-radius: 100px;
+color: #ffffff;
+display: inline-block;
+font-size: 0.9rem;
+font-variant: normal;
+height: 0.9rem;
+line-height: 1;
+padding: 10px;
+width: 0.9rem;
+}
+ 
+#credit a:hover  {
+background: #ffffff;
+color: #828ea4;
+}
+ 
+#credit:hover .credit-name {
+right: 20px;
+opacity: 1;
+}
+ 
+.credit-name {
+background: #333333;
+border: 1px solid #eeeeee;
+border-radius: 100px;
+bottom: 20px;
+color: #ffffff;
+display: inline-block;
+font-size: 0.9rem;
+font-variant: normal;
+height: 0.9rem;
+line-height: 1;
+opacity: 0;
+padding: 10px;
+padding-right: 46.8px;
+position: fixed;
+right: -20px;
+text-align: center;
+z-index: -1;
+-webkit-transition: all 0.9s ease;
+-moz-transition: all 0.9s ease;
+-o-transition: all 0.9s ease;
 }
 
-#credit:hover {
-    color: #3bc6ff;
-    transition: 0.4s;
-}
-
-/* ----------------------------------------------------------------------- */
+{CustomCSS}
     
 </style>
     
@@ -262,244 +357,101 @@ i {                                     /* italic text */
 
 <body>
 
-<!--------------------------- START MAIN CONTENT---------------------------->
-
 <div id="container">
 
-    <!-- header image -->
+<div class="main-wrapper">
 
-    <img id="header" src="https://xatimg.com/image/FTX8uAl5BSdv.gif">
-    
-    <!-- main title -->
-    
-    <h1>ʚ Chai ɞ</h1>
-    
-    <!-- icon image -->
-    
-    <a href="/">
-        <img id="picture" title="{cry baby}" src="https://xatimg.com/image/dsyyJOrneeDz.gif">
-    </a>
-    
-    <!-- START CONTENT -->
-    
-    <div id="content">
-    
-        <!-- start left block -->
-    
-        <div id="leftblock">
-            
-            <!-- left block title -->
-            
-          <h2>✧ a bit about me.</h2>
-            
-            <!-- start left content -->
-        
-            <div class="borderblock">
-                
-                <!-- left column -->
-                
-                <div id="left">
-                    name
-                    <br>
-                    birthday
-                    <br>
-                    gender
-                    <br>
-                    pronouns
-                    <br>
-                    curently
-                    <br>
-                    zodiac
-                </div>
-                
-                <!-- right column -->
-                
-                <div id="right">
-                    chai
-                    <br>
-                    8/16
-                    <br>
-                    female
-                    <br>
-                    she/her
-                    <br>
-                    sleepy
-                    <br>
-                    leo
-                </div>
-                
-                <!-- bio -->
-                
-                <div id="bio">
+<!-- Start of Links and Avatar -->
 
-Hey there, my friends call me chai. I'm a bit of a night owl so please have patience with me. Feel free to pc me when you see me! Don't tell me we aren't friends yet? 
-                </div>
-                
-            </div>
-            
-            <!-- end left content -->
-        
-        </div>
-        
-        <!-- end left block -->
-        
-        <!-- start color block -->
-        
-        <div id="aesthetic">
-            
-            <div class="colors" id="color1"></div>
-            <div class="colors" id="color2"></div>
-            <div class="colors" id="color3"></div>
-            <div class="colors" id="color4"></div>
-            
-        </div>
-        
-        <!-- end color block -->
-        
-        <!-- start right block -->
-        
-        <div id="rightblock">
-        
-            <!-- right block title -->
-            
-          <h2>  ૮꒰ ˶• ༝ •˶꒱ა ♡ </h2>
-            
-            <!-- start right content -->
-            
-            <div class="borderblock">
-                
-                <a href="" title="thank you">
-                    <div class="links">
-                        These are 
-                    </div>
-                </a>
-                
-                <a href="" title="for putting up w/">
-                    <div class="links">
-                        my sweet
-                    </div>
-                </a>
-                
-                <a href="" title="a crybaby like me!">
-                    <div class="links">
-                        cuties
-                    </div>
-                </a>
-                
-                <a href="https://xat.me/Ecchi" title="rawr!">
-                    <div class="links">
-                        nana ♡ 
-                    </div>
-                </a>
-                
-                <a href="https://xat.me/slaughtersloot" title="lil bro">
-                    <div class="links">
-                          Ryan ♡
-                    </div>
-                </a>
-                
-                <a href="https://xat.me/TheFoolArcana" title="•⩊•">
-                    <div class="links">
-                        Matt ♡
-                    </div>
-                </a>
-                
-                <a href="https://xat.me/loreseeker" title="Fiesty qt">
-                    <div class="links">
-                         Z ♡
-                    </div>
-                </a>
-                
-                <a href="https://xat.me/aretejuku" title="bestie!">
-                    <div class="links">
-                        Arete ♡
-                    </div>
-                </a>
-                
-                <a href="https://xat.me/wolfie" title="ily cutie!">
-                    <div class="links">
-                          Leia ♡
-                    </div>
-                </a>
-                
-                <a href="https://xat.me/Rose" title="the cutest">
-                    <div class="links">
-                           Rose ♡
-                    </div>
-                </a>
-                
-         <a href="https://xat.me/Vegito" title="ur cool">
+<div id="links-wrapper">
 
-                    <div class="links">
-                        Izzy ♡
-                      </div>
-                </a>
-                
-                <a href="https://xat.me/LunaTheScholar" title="CEO ">
-                    <div class="links">
-                        Luna ♡
-                  </div>  
-                </a>
-               <a href="https://xat.com/ecchi" title="(๑>؂•̀๑)">
-                    <div class="links">
-                        Home ♡
-                       </div>  
-                </a>
-               <a href="/" title="shōjo manga's, sleep, cows, color blue, sanrio characters, good vibes, boba tea, marvel, dogs, watching game plays, one piece.">
-                    <div class="links">
-                       Likes ♡
-                       </div>  
-                </a>
-               <a href="/" title="personally i dislike anything that doesn't bring me joy or peace. forgetting my birthday is just cruel. liars. milk.">
-                    <div class="links">
-                      Dislikes ♡
-                       </div>
-                </a>
-                
-                <a href="/" title="-love chai">
-                    <div class="links">
-                      xoxoxoxox
-            </div>
-            
-            <!-- end right content -->
-            
-        </div>
-        
-        <!-- end right block -->
-    
-    </div>
-    
-    <!-- END CONTENT -->
-    
+<div class="links">
+<a href="https://xat.me/Ecchi" title="Nana"><i class="fas fa-carrot"></i></a>
+<a href="https://xat.me/xRaidSendo" title="Raid"><i class="far fa-star"></i></a>
+<a href="https://xat.me/UnidentifiedAsh" title="Ash"><i class="far fa-star"></i></a>
+  <a href="https://xat.me/
+           Loreseeker" title="Z"><i class="far fa-star"></i></a>
+<a href="https://xat.me/Royalty" title="Leia"><i class="far fa-star"></i></a>
+  <a href="https://xat.me/rose" title="rose"><i class="far fa-star"></i></a>
+  <a href="https://xat.me/LunaTheScholar" title="Luna"><i class="far fa-star"></i></a>
+<a href="https://xat.me/vegito" title="Izzy"><i class="far fa-heart"></i></a>
 </div>
 
-<!---------------------------- END MAIN CONTENT----------------------------->
+<div class="avatar-image"><img src="https://xatimg.com/image/4K1ljhWOGESG.gif"/></div>
 
-<!-- don't edit beyond this point please! colors can be modified in <style> -->
+</div>
 
-<a id="credit" target="blank" href="https://nuclearthemes.tumblr.com/">
-    page theme by bones.
-</a>
+<!-- End of Links and Avatar -->
 
-<script src="https://unpkg.com/popper.js@1"></script>
-<script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/svg-arrow.css" />
+<!-- Start of Box -->
 
-<script>
-    tippy('[title]', {
-        theme: 'custom',
-        arrow: false,
-        delay: [200, 0],
-        zIndex: 9999999999,
-        maxWidth: 300,
+<div class="box-outer">
 
-        content(reference) {
-            const title = reference.getAttribute('title');
-            reference.removeAttribute('title');
-            return title;
-        },
-    });
-</script>
+<div class="box-inner">
+
+<div class="about-icon-image"><img src="https://xatimg.com/image/F97qe9Xu2Yy2.jpg"/></div>
+
+<div class="about-title">・   ʚ🍡🌟🫧ɞ  ・</div>
+
+<div class="about-content">
+ <br><br>
+hey there cutie, my friends call me chai. Don't be a stranger ♡ 
+<br><br>
+I'm a bit of a night owl and i'm hardly available to speak to. If you happen to catch me let me know your fave anime! 
+</div>
+
+<!-- Start of Likes and Dislikes -->
+
+<div class="likes-dislikes-wrapper">
+
+<div class="likes-wrapper">
+<b>Likes</b>
+<br><br>
+Shōjo Manga's, sleep,
+  cows, color blue, sanrio characters, good vibes, boba tea, marvel, dogs, watching game plays, one piece, oatmilk.
+               
+</div>
+
+<div class="dislikes-wrapper">
+<b>Dislikes</b>
+<br><br>
+personally I dislike anything that doesn't bring me joy or peace. Forgetting my birthday is just cruel. Liars. milk. 
+</div>
+
+</div>
+
+<!-- End of Likes and Dislikes -->
+
+</div>
+
+</div>
+
+<!-- End of Box -->
+
+<!-- Start of About Image -->
+
+<div class="about-image">
+
+<div class="info">
+<li><i class="far fa-heart"></i><font style="float: right;">Chai</font></li>
+<li><i class="fas fa-check"></i><font style="float: right;">She/Her</font></li>
+<li><i class="fas fa-birthday-cake"></i><font style="float: right;">08/16</font></li>
+<li><i class="fas fa-globe-americas"></i><font style="float: right;">Chicago,IL</font></li>
+</div>
+
+</div>
+
+<!-- End of About Image -->
+
+</div>
+
+</div>
+
+<!-- Start of Theme Credit -->
+ 
+<div id="credit"><a href="https://vitaminholland.tumblr.com/"><i class="fas fa-feather-alt"></i></a><div class="credit-name">VIT</div></div>
+ 
+<!-- End of Theme Credit --> 
 
 </body>
 
