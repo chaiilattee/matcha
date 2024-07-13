@@ -1,457 +1,417 @@
-<!DOCTYPE html>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<html>
+<!-----
  
+;; about three: eloquent ;;
+ 
+about page by ebrothemes
+ 
+TERMS OF USE:
+- do not remove or edit the credit. 
+            (it will automatically change color 
+            along with your color customizations.)
+- do not repost/redistribute.
+- do not take parts of the code and use it as your own.
+- do not use as a base code.
+ 
+ 
+CREDITS:
+Background pattern from Toptal Subtle Patterns
+normalize.css by necolas on github
+ 
+ 
+COLORS:
+if you want to change the colors, mess with the colors in the ::root section which will change the colors across the code
+ 
+ 
+INSTRUCTIONS:
+all editing should be clear once you reach the html sequence in the bottom half. 
+ 
+BUT to edit/add the images, look for the 🌻 emoji or search for where it says 'replace this url with your image' and you'll change where it says 'URLHERE' to your image url. there are additional troubleshooting notes in that area.
+ 
+ 
+x camila
+ 
+----->
+ 
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
 <head>
  
-<title>{Title}</title>
-
+<title>about me</title>   
+ 
 <link rel="shortcut icon" href="{Favicon}">
-
-<!-- 'Honey' by vitaminholland -->
-
-<!-- Google Fonts Script -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
  
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Styled Tooltips Script -->
+<link href="https://fonts.googleapis.com/css2?family=Khula:wght@300;400&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
  
-<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
- 
-<script>
-(function($){
-$(document).ready(function(){
-$("a[title]").style_my_tooltips({
-tip_follows_cursor:true,
-tip_delay_time:90,
-tip_fade_speed:600,
-attribute:"title"
-});
-});
-})(jQuery);
-</script>
- 
-<!-- Font Awesome Script -->
- 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
 <style type="text/css">
  
-.tmblr-iframe--app-cta-button {
-display: none!important;
-}
- 
-::-webkit-scrollbar-thumb:vertical {
-background: #7B9B9D;
-}
- 
-::-webkit-scrollbar {
-width: 1px;
-}
- 
-::selection {
-background: #C15A7A;
-color: white;
-}
- 
-::-moz-selection {
-background: #C15A7A;
-color: white;
-}
- 
-#s-m-t-tooltip {
-background: #ffffff;
-border-radius: 5px;
-color: #7b9b9d;
-font-size: 0.8rem;
-margin-top: 30px;
-padding: 5px;
-text-align: center;
-text-transform: lowercase;
-z-index: 999999999999999999999999999999999999;
+:root {
+    --background:#ffffff;
+    --aboutbg:#ffffff;
+    
+    --text:#131515;
+    --accent:#f7dcea;
+    --accenttext:#ffffff;
 }
  
 body {
-background: #7b9b9d;
-color: #000000;
-cursor:url(https://xatimg.com/image/fjorAXinjAnt.gif), auto;
-font-family: 'Quicksand', sans-serif;
-font-size: 0.9rem;
-font-style: normal;
-font-weight: 400;
-hyphens: auto;
-letter-spacing: 1px;
-margin: 0px;
-text-align: left;
-text-transform: none;
-word-wrap: break-word;
+    color: var(--text);
+    font-family: 'Poppins', sans serif;
+    background-image: url('https://xatimg.com/image/ep7QMk0ZYewW.gif');
+    background-position: center;
+}
+    
+.grid-container1 {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 800px 1fr;
+    grid-template-rows: 1fr 500px 1fr;
 }
  
-a {
-color: #E17BA2;
-text-decoration:  none;
--webkit-transition: all 0.5s ease;
--moz-transition: all 0.5s ease;
--o-transition: all 0.5s ease;
+.credit {
+    position: absolute;
+    bottom: 20px; 
+    right: 20px;
+    height: 20px;
+    font-size:17.5px;
+    line-height:20px;
+    border-radius: 20px;
+    text-align: center;
+    background: var(--accent); 
+    padding: 2px 0px;
+    font-weight:400;
+    opacity: 0.5;
+    box-shadow: 0px 0px 10px -2px #000;
+    transition: 200ms;
 }
  
-a:hover {
-color: #E17BA2;
+.credit a {
+    text-decoration: none;
+    padding: 5px 8px;
 }
  
-b {
-font-weight: 700;
-}
-
-h1 {
-font-size: 1.5rem;
-font-weight: bold;
-margin-block-start: 0em;
-text-transform: lowercase;
-}
-
-h2 {
-font-size: 1rem;
-font-weight: bold;
-margin-block-start: 0em;
+.credit:hover {
+    opacity: 1;
 }
  
-blockquote {
-border-left: 1px solid #E17BA2;
-margin: 5px;
-padding-left: 5px;
+.grid-container2 {
+    border-radius: 7px 10px 10px 10px;
+    box-shadow: 0px 3px 10px -2px #000;
+    grid-area: 2 / 2 / 2 / 2;
+    background: var(--aboutbg);
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
 }
-
-#container {
-left: calc(50% - 425.5px);
-position: fixed;
-top: calc(50% - 250px);
-width: 871px;
+ 
+/* TOP LYRIC */
+ 
+.topbar {
+    grid-area: 1 / 1 / 1 / 4;
+    border-bottom:1px solid var(--accent);
+    color: var(--accent);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 50px;
+    text-align: center;
 }
-
-.main-wrapper {
-align-items: stretch;
-display: flex;
-width: 871px;
+ 
+/* SMALL PICTURE STYLING */
+ 
+.leftpic {
+    grid-area: 8 / 1 / 11 / 1;
+    background: var(--accent);
+    border-radius: 0 0 0 7px;
 }
-
-#links-wrapper {
-background: #f7eed2;
-border-right: 1px solid #7B9B9D;
-align-items: baseline;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-height: 500px;
-width: 70px;
+ 
+/* LONG PICTURE STYLING */
+ 
+.rightpic {
+    grid-area: 1 / 4 / 11 / 4;
+    background: var(--accent);
+    border-radius: 0 7px 7px 0;
 }
-
+ 
+/* MAIN ABOUT BOX */
+ 
+.main {
+    grid-area: 2 / 2 / 8 / 4;
+    padding: 0px 15px;
+    overflow: auto;
+    border-top: 15px solid var(--aboutbg);
+    border-bottom: 15px solid var(--aboutbg);
+}
+ 
+.main p {
+    margin-top: 0;
+    font-size: 10pt;
+    line-height: 20px;
+}
+ 
+.main i {
+    color: var(--accent);
+}
+ 
+.main b {
+    color: var(--accent);
+}
+ 
+.main a {
+    color: var(--text);
+    text-decoration-color: var(--accent);
+    transition: 200ms;
+}
+ 
+.main a:hover {
+    color: var(--accent);
+}
+ 
+/* NAME AND INFO BOX */
+ 
+.base {
+    grid-area: 9 / 2 / 11 / 4;
+    border-bottom:5px solid var(--accent);
+    text-align: center;
+}
+ 
+.name {
+    width: max-content;
+    border-bottom: 1px solid var(--accent);
+    margin: 10px auto;
+    padding: none;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 28pt;
+}
+ 
+.base p {
+    padding: none;
+    margin: none;
+    line-height: 3px;
+    font-family:'Khula', sans-serif;
+    font-weight: 300;
+}
+ 
+/* LINKS */
+ 
 .links {
-margin-left: auto;
-margin-right: auto;
-margin-top: 16.805px;
-width: 34.39px;
+    grid-area: 8 / 2 / 8 / 4;
+    border-bottom:1px solid var(--accent);
+    border-top:1px solid var(--accent);
 }
-
+ 
+.links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+ 
+.links li {
+    display: inline;
+    line-height: 50px;
+}
+ 
 .links a {
-background: #7B9B9D;
-border-radius: 5px;
-color: #ffffff;
-display: inline-block;
-font-size: 0.9rem;
-font-variant: normal;
-height: 0.9rem;
-line-height: 1;
-margin-bottom: 10px;
-padding: 10px;
-text-rendering: auto;
-width: 0.9rem;
-}
-
-.links a:hover {
-color: #7B9B9D;
-}
-
-.links a:last-of-type {
-margin-bottom: 0px;
-}
-
-.avatar-image {
-height: 40px;
-margin-bottom: 16.805px;
-margin-left: auto;
-margin-right: auto;
-width: 40px;
-}
-
-.avatar-image img {
-border-radius: 5px;
-height: 40px;
-width: 40px;
-}
-
-.box-outer {
-background: #f7eed2;
-align-items: center;
-display: flex;
-height: 500px;
-width: 400px;
-}
-
-.box-inner {
-padding: 50px;
-max-height: 400px;
-overflow-y: scroll;
-width: 300px;
-}
-
-.about-icon-image {
-height: 100px;
-margin-left: auto;
-margin-right: auto;
-width: 100px;
-}
-
-.about-icon-image img {
-border-radius: 5px;
-height: 100px;
-width: 100px;
-}
-
-.about-title {
-font-weight: bold;
-margin-top: 20px;
-text-align: center;
-text-transform: lowercase;
-}
-
-.about-content {
-margin-top: 15px;
-text-transform: lowercase;
-}
-
-.likes-dislikes-wrapper {
-align-items: stretch;
-border-top: 1px solid#7B9B9D;
-display: flex;
-margin-top: 15px;
-padding-top: 15px;
-width: 300px;
-}
-
-.likes-wrapper {
-text-transform: lowercase;
-width: 140px;
-}
-
-.dislikes-wrapper {
-margin-left: 20px;
-text-transform: lowercase;
-width: 140px;
-}
-
-.about-image {
-background-image: url("https://xatimg.com/image/zbw1CQQrBokN.gif");
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-height: 500px;
-width: 400px;
-}
-
-.info {
-background: rgba(255, 255, 255, 0.7);
-border-radius: 5px;
-bottom: 25px;
-font-size: 0.9rem;
-margin-left: 25px;
-padding: 15px;
-position: absolute;
-text-transform: uppercase;
-width: 320px;
+    padding: 0 8px;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 700;
+    font-style: italic;
+    transition: 400ms;
+    border-radius: 3px;
 }
  
-.info li {
-border-bottom: 1px solid #55555;
-list-style-type: none;
-padding-bottom: 10px;
-padding-top: 10px;
+.links li a:hover {
+    background: var(--accent);
+    color: var(--accenttext);
 }
  
-.info li:first-child {
-padding-top: 0px;
+/* TAGS / NAVIGATION */
+ 
+.stats {
+    grid-area: 2 / 1 / 8 / 1;
+    background: var(--accent);
+    display: flex;
 }
  
-.info li:last-child {
-border-bottom: none;
-padding-bottom: 0px;
-}
-
-#credit {
-bottom: 20px;
-font-size: 0.9rem;
-height: 36px;
-position: fixed;
-right: 20px;
-text-transform: uppercase;
-z-index: 1;
-width: auto;
+.stats ul {
+  list-style: none;
+  padding: none;
+  margin-left: -20px;
+  color: var(--accenttext);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
  
-#credit a {
-background: #CC9B98;
-border: 1px solid #eeeeee;
-border-radius: 100px;
-color: #ffffff;
-display: inline-block;
-font-size: 0.9rem;
-font-variant: normal;
-height: 0.9rem;
-line-height: 1;
-padding: 10px;
-width: 0.9rem;
+.stats li {
+  padding-left: none;
+  margin: none;
+  text-indent: 0px;
+  line-height:10px;
 }
  
-#credit a:hover  {
-background: #ffffff;
-color: #828ea4;
+.stats a {
+    text-decoration: none;
+    color: inherit;
+    padding: 6px 8px;
+    border-radius: 3px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    letter-spacing: 1px;
+    transition: 400ms;
 }
  
-#credit:hover .credit-name {
-right: 20px;
-opacity: 1;
+n {
+    position: relative;
+    right: 5px;
+    top: 7px;
+    font-family: 'Londrina Outline', display;
+    font-style: normal;
+    font-size: 30pt;
 }
  
-.credit-name {
-background: #333333;
-border: 1px solid #eeeeee;
-border-radius: 100px;
-bottom: 20px;
-color: #ffffff;
-display: inline-block;
-font-size: 0.9rem;
-font-variant: normal;
-height: 0.9rem;
-line-height: 1;
-opacity: 0;
-padding: 10px;
-padding-right: 46.8px;
-position: fixed;
-right: -20px;
-text-align: center;
-z-index: -1;
--webkit-transition: all 0.9s ease;
--moz-transition: all 0.9s ease;
--o-transition: all 0.9s ease;
+.stats a:hover {
+    background: var(--aboutbg);
+    color: var(--text);
 }
-
-{CustomCSS}
+ 
+ 
+/* LONG PHOTO */
+ 
+.pic1 {
+    height: 500px;
+    width: 200px;
+    
+    
+     /* 🌻 replace this url with your image for the right picture */
+    background-image: url("https://xatimg.com/image/uFsi22fF9haO.jpg");
+    
+    
+    /* if it looks weird like it's repeating, switch the two values under 'background-size' to '100% auto' and it should correct it */
+    
+    /* if it isn't centered properly, mess around with the FIRST percentage under 'background-position' to move it left or right */
+    
+    /* if it looks too dark or light, or the contrast is off, you can edit that under 'filter'. just change the brightness and contrast values. 100% is normal. lower percentages lower the brightness/contrast, higher percentages increase it. */
+    
+    background-position: 20% 50%;
+    background-size: auto 100%; 
+    border-radius: 0 7px 7px 0;
+    filter: grayscale(0%) brightness(100%) contrast(100%);
+    mix-blend-mode: multiply;
+}
+ 
+/* SMALL PHOTO */
+ 
+.pic2 {
+    height: 150px;
+    width: 200px;
+    
+    
+    /* 🌻 replace this url with your image for the bottom left photo*/
+    background-image: url("https://xatimg.com/image/TaLAmphEccxy.gif");
+    
+    /* if it looks weird like it's repeating, switch the two values under 'background-size' to '100% auto' and it should correct it */
+    
+    /* if it isn't centered properly, mess around with the FIRST percentage under 'background-position' to move it left or right */
+    
+    /* if it looks too dark or light, or the contrast is off, you can edit that under 'filter'. just change the brightness and contrast values. 100% is normal. lower percentages lower the brightness/contrast, higher percentages increase it. */
+    
+    
+    background-position: 50% 50%;
+    background-size: auto 100%;
+    border-radius: 0 0 0 7px;
+    filter: grayscale(50%) brightness(100%) contrast(100%);
+    mix-blend-mode: multiply;
+}
     
 </style>
-    
+  
+      
 </head>
-
+ 
 <body>
-
-<div id="container">
-
-<div class="main-wrapper">
-
-<!-- Start of Links and Avatar -->
-
-<div id="links-wrapper">
-
-<div class="links">
-<a href="https://xat.me/Ecchi" title="Nana"><i class="fas fa-carrot"></i></a>
-<a href="https://xat.me/xRaidSendo" title="Raid"><i class="far fa-star"></i></a>
-<a href="https://xat.me/UnidentifiedAsh" title="Ash"><i class="far fa-star"></i></a>
-<a href="https://xat.me/Loreseeker" title="Z"><i class="far fa-star"></i></a>
-<a href="https://xat.me/Royalty" title="Leia"><i class="far fa-star"></i></a>
-  <a href="https://xat.me/rose" title="rose"><i class="far fa-star"></i></a>
-  <a href="https://xat.me/LunaTheScholar" title="Luna"><i class="far fa-star"></i></a>
-<a href="https://xat.me/vegito" title="Izzy"><i class="far fa-heart"></i></a>
-</div>
-
-<div class="avatar-image"><img src="https://xatimg.com/image/4K1ljhWOGESG.gif"/></div>
-
-</div>
-
-<!-- End of Links and Avatar -->
-
-<!-- Start of Box -->
-
-<div class="box-outer">
-
-<div class="box-inner">
-
-<div class="about-icon-image"><img src="https://xatimg.com/image/F97qe9Xu2Yy2.jpg"/></div>
-
-<div class="about-title">・   ʚ🍡🌟🫧ɞ  ・</div>
-
-<div class="about-content">
- <br><br>
-hey there cutie, my friends call me chai. Don't be a stranger ♡ 
-<br><br>
-I'm a bit of a night owl and i'm hardly available to speak to. If you happen to catch me let me know your fave anime! 
-</div>
-
-<!-- Start of Likes and Dislikes -->
-
-<div class="likes-dislikes-wrapper">
-
-<div class="likes-wrapper">
-<b>Likes</b>
-<br><br>
-Shōjo Manga's, sleep,
-  cows, color blue, sanrio characters, good vibes, boba tea, marvel, dogs, watching game plays, one piece, oatmilk.
-               
-</div>
-
-<div class="dislikes-wrapper">
-<b>Dislikes</b>
-<br><br>
-personally I dislike anything that doesn't bring me joy or peace. Forgetting my birthday is just cruel. Liars. milk. 
-</div>
-
-</div>
-
-<!-- End of Likes and Dislikes -->
-
-</div>
-
-</div>
-
-<!-- End of Box -->
-
-<!-- Start of About Image -->
-
-<div class="about-image">
-
-<div class="info">
-<li><i class="far fa-heart"></i><font style="float: right;">Chai</font></li>
-<li><i class="fas fa-check"></i><font style="float: right;">She/Her</font></li>
-<li><i class="fas fa-birthday-cake"></i><font style="float: right;">08/16</font></li>
-<li><i class="fas fa-globe-americas"></i><font style="float: right;">Chicago,IL</font></li>
-</div>
-
-</div>
-
-<!-- End of About Image -->
-
-</div>
-
-</div>
-
-<!-- Start of Theme Credit -->
+<div class="grid-container1">
  
-<div id="credit"><a href="https://vitaminholland.tumblr.com/"><i class="fas fa-feather-alt"></i></a><div class="credit-name">VIT</div></div>
- 
-<!-- End of Theme Credit --> 
+    <div class="grid-container2">
+    <div class="rightpic"><div class="pic1"></div></div>
+    <div class="leftpic"><div class="pic2"></div></div>
+    
+    
+    
+<!-- QUOTE / LYRIC -->
+        <div class="topbar">
+            
+"願いなんていらないよ、君に会った日に夢は全部叶ったから"
 
+        </div>
+        
+        
+<!-- TAGS -->
+        
+        <div class="stats">
+            <ul>
+            
+            <!-- TAGS / NAVIGATION goes here. they space themselves but i'd recommend sticking with 5 - 7 tags -->
+            
+            <li><a href="https://xat.me/ecchi"><n>♡</n>the dueler</a></li>
+            <li><a href="https://xat.me/loreseeker"><n>♡</n>the waifu</a></li>
+            <li><a href="https://xat.me/royalty"><n>♡</n>the queen</a></li>
+            <li><a href="https://xat.me/UnidentifiedAsh"><n>♡</n>the vampire</a></li>
+            <li><a href="https://xat.me/xRaidSendo"><n>♡</n>the homie</a></li>
+            <li><a href="https://xat.me/Vegito"><n>♡</n>the sweetest</a></li>
+            
+            
+            </ul>
+        </div>
+        
+        
+<!-- ABOUT -->
+ 
+<div class="main">
+        
+        <!-- about text goes in between this note -->
+  <p> <h4><i>Hey there cutie..</i></h4></p>
+            <p>i'm a bit of a nightowl that lingers around. Most of the time I'm afk, but please have patience! There are so many cuties I've met over the years that I can't express how much I cherish them. xoxoxo </i></h4></p>
+ <p> <h5><i>Likes♡ :</i> cows, color blue, romance, sleep, oatmilk, fall weather,shoujo's, one piece, dragonball, marvel.</h5></p>
+  <p> <h5><i>Dislikes♡ :</i>broken promises, liars, drama, anything that doesn't bring me happiness, time wasted.</h5></p>
+            
+            
+        <!-- and this note -->    
+            
+</div>
+        
+ 
+<!-- LINKS -->
+ 
+        <div class="links"><ul>
+            <li><a href="/urlhere">lets</a></li>
+            <li><a href="/urlhere">start with</a></li>
+            <li><a href="/urlhere">hello</a></li>
+            <li><a href="/URLHERE">🍡</a></li>
+        </ul></div>
+        
+        
+<!-- NAME AND INFO -->
+ 
+        <div class="base">
+            <div class="name">Chaii</div>
+            <p>sleepy ✩ overthinker ✩ crybaby</p>
+        </div>
+        
+ 
+ 
+</div>
+<div class="credit"><a href="https://ebrothemes.tumblr.com" title="ebrothemes" style="color:var(--accenttext);">E</a></div>
+</div>
+ 
 </body>
-
 </html>
