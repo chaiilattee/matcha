@@ -1,416 +1,777 @@
-<!-----
- 
-;; about three: eloquent ;;
- 
-about page by ebrothemes
- 
-TERMS OF USE:
-- do not remove or edit the credit. 
-            (it will automatically change color 
-            along with your color customizations.)
-- do not repost/redistribute.
-- do not take parts of the code and use it as your own.
-- do not use as a base code.
- 
- 
-CREDITS:
-Background pattern from Toptal Subtle Patterns
-normalize.css by necolas on github
- 
- 
-COLORS:
-if you want to change the colors, mess with the colors in the ::root section which will change the colors across the code
- 
- 
-INSTRUCTIONS:
-all editing should be clear once you reach the html sequence in the bottom half. 
- 
-BUT to edit/add the images, look for the 🌻 emoji or search for where it says 'replace this url with your image' and you'll change where it says 'URLHERE' to your image url. there are additional troubleshooting notes in that area.
- 
- 
-x camila
- 
------>
- 
-<!DOCTYPE html>
-<html>
-<html lang="en-US">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
  
-<title>about me</title>   
+<title>{Title}</title>
  
 <link rel="shortcut icon" href="{Favicon}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+<!--------------------JAVASCRIPTS-------------------->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="//static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:0,
+tip_fade_speed:250,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
  
-<link href="https://fonts.googleapis.com/css2?family=Khula:wght@300;400&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Quicksand:500|Karla" rel="stylesheet">
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<script src="//static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
+
+<script src="//static.tumblr.com/2pnwama/csBppxn8i/breeze.js"></script>
  
-<link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+<!-------------------------------------------------------------------->
  
 <style type="text/css">
  
+/*--------------------TOOLTIPS--------------------*/
+#s-m-t-tooltip {
+    padding:5px 10px;
+    margin:20px;
+    background-color:var(--Tooltip-Background);
+    border-radius:3px;
+    font-family:karla;
+    font-size:9px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--Tooltip-Text);
+    z-index:99;
+    max-width:40vw;
+}
+ 
+/*--------------------TUMBLR CONTROLS--------------------*/
+#plus-s {
+    position:fixed;
+    top:0;margin-top:17px;
+    right:0;margin-right:15px;
+    z-index:10;
+}
+
+#plus-s svg {
+    width:15px;height:15px;
+    color:var(--Top-Right-Plus-Icon);
+}
+
+iframe#tumblr_controls, .iframe-controls--desktop {
+    top:calc(1px + 5px)!important;
+    right:calc(5px)!important;
+    padding-right:40px;
+    position:fixed!important;
+    
+    /* delete these 2 lines if you want white tumblr controls */
+    filter:invert(100%) hue-rotate(180deg);
+    -webkit-filter:invert(100%) hue-rotate(180deg);
+    
+    transform:scale(0.7,0.7);
+    -webkit-transform:scale(0.7,0.7);
+    -moz-transform:scale(0.7,0.7);
+    -ms-transform:scale(0.7,0.7);
+    -o-transform:scale(0.7,0.7);
+    
+    transform-origin:100% 0;
+    -webkit-transform-origin:100% 0;
+    -moz-transform-origin:100% 0;
+    -ms-transform-origin:100% 0;
+    -o-transform-origin:100% 0;
+    z-index:999999!important;
+    
+    opacity:0; /* delete this line if you want visible tumblr controls */
+    
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+iframe#tumblr_controls:hover, .iframe-controls--desktop:hover {
+    opacity:1;
+}
+ 
+/*--------------------SCROLLBAR--------------------*/
+::-webkit-scrollbar {
+    background-color:var(--Scrollbar-BG);
+    height:13px;
+    width:13px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color:var(--Scrollbar);
+    border:6px solid var(--Scrollbar-BG);
+}
+ 
+::-webkit-scrollbar-track {
+    background-color:var(--Scrollbar-BG);
+}
+
+/*-----------------COLORS & VALUES-----------------*/
 :root {
-    --background:#000000;
-    --aboutbg:#848FB2;
+    /* column styling */
+    --Column-1-Width:250px;
+    --Column-2-Width:260px;
+    --Column-3-Width:250px;
+    --Column-Gap:25px;
+    --Items-Background-Color:#fff;
+    --Box-Shadow:#f7f7f7;
     
-    --text:#ffffff;
-    --accent:#c2c6cc;
-    --accenttext:#ffffff;
+    /* 1st column */
+    --Intro-Box-Title:#333;
+    --Intro-Box-Text:#888;
+    --Intro-Nav-Links-Icon:#333;
+    --Social-Media-Icons:#333;
+    --Social-Media-Links:#333;
+    
+    /* 2nd column */
+    --Tags-Border:#eee;
+    --Tags:#999;
+    --Tags-Background-On-Hover:#37353A;
+    --Tags-Border-On-Hover:#37353A;
+    --Tags-On-Hover:#eee;
+    
+    --graphsize:73px; /* Graph size. Do not go below 60px */
+    --emptyprogress: #fafafa; /* Empty progress bar colour */
+    --progress: #333; /* Progress bar colour */
+    --fullprogress: #333; /* Progress bar colour when it's 100% */
+    --Percentage-Graph-Label:#777;
+    
+    --Color-Hex-Text:#333;
+    --Color-RGB-Text:#999;
+    
+    --Music-Controls:#222;
+    --Music-Note:#222;
+    --Song-Title:#222;
+    --Song-Artist:#999;
+    
+    /* 3rd column */
+    --Info-Icons:#eee;
+    --Info-Icons-BG:#333;
+    --Info-Text:#888;
+    --Info-Bold:#222;
+    
+    --Video-Top-Text-1:#222;
+    --Video-Top-Text-2:#999;
+    --Video-Link-Right-Chevron:#999;
+    --Video-Controls:#fff;
+    --Video-Controls-Shadows:#333;
+    
+    --Text-Box-Text:#888;
+    
+    /* extras, misc */
+    --Top-Right-Plus-Icon:#333;
+    --Tooltip-Background:#222;
+    --Tooltip-Text:#eee;
+    --Highlighted-Text-BG:#fafafa;
+    --Highlighted-Text:#222;
+    --Scrollbar-BG:#fafafa;
+    --Scrollbar:#666;
+    --Links:#000;
 }
  
+/*--------------------BASICS--------------------*/
 body {
-    color: var(--text);
-    font-family: 'Poppins', sans serif;
-    background-image: url('https://xatimg.com/image/fjh623FIyyZZ.jpg');
-    background-position: center;
+    background:#888 url('https://xatimg.com/image/TGrnDceu0BiF.gif');
+    background-attachment:fixed;
+    background-repeat:repeat;
+    color:#888;
+    cursor:normal;
+    font-family:karla;
+    line-height:1.6em;
+    font-size:12px;
+    text-align:left;
 }
-    
-.grid-container1 {
-    display: grid ;
-    height: 100vh;
-    grid-template-columns: 1fr 800px 1fr;
-    grid-template-rows: 1fr 500px 1fr;
+
+a {
+    color:var(--Links);
+    text-decoration:none;
 }
- 
-.credit {
-    position: absolute;
-    bottom: 20px; 
-    right: 20px;
-    height: 20px;
-    font-size:17.5px;
-    line-height:20px;
-    border-radius: 20px;
-    text-align: top;
-    background: var(--accent); 
-    padding: 2px 0px;
-    font-weight:400;
-    opacity: 0.5;
-    box-shadow: 0px 0px 10px -2px #000;
-    transition: 200ms;
+
+a, svg {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
 }
- 
-.credit a {
-    text-decoration: none;
-    padding: 5px 8px;
+
+b, strong {font-weight:bold;}
+
+pre, code {
+    white-space:pre-wrap;
+    display:block;
 }
- 
-.credit:hover {
-    opacity: 1;
+
+::selection {
+background:var(--Highlighted-Text-BG);
+color:var(--Highlighted-Text);
 }
  
-.grid-container2 {
-    border-radius: 7px 10px 10px 10px;
-    box-shadow: 0px 3px 10px -2px #000;
-    grid-area: 2 / 2 / 2 / 2;
-    background: var(--aboutbg);
-    display: grid;
-    height: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+::-moz-selection {
+background:var(--Highlighted-Text-BG);
+color:var(--Highlighted-Text);
 }
  
-/* TOP LYRIC */
- 
-.topbar {
-    grid-area: 1 / 1 / 1 / 4;
-    border-bottom:1px solid var(--accent);
-    color: var(--accent);
-    font-weight: 700;
-    font-style: italic;
-    line-height: 50px;
-    text-align: center;
+/*------------CONTAINER------------*/
+#cont-h-1 {
+    position:fixed;
+    top:0;left:0;right:0;
+    margin:0 auto;
+    height:100vh;
+    text-align:center;
+}
+
+#cont-h-2 {display:inline-block;}
+#cont-v-1 {height:100vh;display:table;}
+#cont-v-2 {display:table-cell;vertical-align:middle;}
+
+#columnwrap {
+    display:flex;
+    margin:calc(var(--Column-Gap) * -1) auto;
+    white-space:nowrap;
+}
+
+#columnwrap > * {white-space:normal;}
+
+.column {
+    margin:calc(var(--Column-Gap) / 2);
+}
+
+.column:nth-child(1) {width:var(--Column-1-Width);}
+.column:nth-child(2) {width:var(--Column-2-Width);}
+.column:nth-child(3) {width:var(--Column-3-Width);}
+
+.xyz {
+    border-radius:3px;
+    overflow:hidden;
+    box-shadow:3px 3px 12px var(--Box-Shadow);
+}
+
+/*------------1ST COLUMN------------*/
+.intro-block {width:inherit;}
+
+.intro-header {
+    position:relative;
+    width:100%;
+}
+
+.intro-avatar {
+    position:relative;
+    display:block;
+    vertical-align:middle;
+    margin:calc((-64px / 2) - 8px) auto;
+    width:64px;height:64px;
+    background:var(--Items-Background-Color);
+    border-radius:100%;
+    border:8px solid var(--Items-Background-Color);
+}
+
+.intro-pad {
+    padding:calc((64px / 2) + 8px + 8px) 14px 14px 14px;
+    background:var(--Items-Background-Color);
+}
+
+.intro-title {
+    margin-bottom:8px;
+    font-family:quicksand;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--Intro-Box-Title);
+}
+
+.intro-desc {
+    font-size:12px;
+    line-height:1.8em;
+    color:var(--Intro-Box-Text);
+}
+
+.navlinks {
+    margin-top:16px;
+    text-align:center;
+}
+
+.navlinks a {
+    display:inline-block;
+    padding:0 6px;
+}
+
+.navlinks svg {
+    width:12px;height:12px;
+    color:var(--Intro-Nav-Links-Icon);
+    stroke-width:2px;
+}
+
+.social-media {
+    margin-top:var(--Column-Gap);
+    background:var(--Items-Background-Color);
+    padding:16px;
+    text-align:left;
+}
+
+.social-media a {
+    display:flex;
+    padding:7px 0;
+    width:100%;
+}
+
+.social-media a > * {
+    align-self:center;
+    -webkit-align-self:center;
+}
+
+.social-media a:first-child {padding-top:0px;}
+.social-media a:last-child {padding-bottom:0px;}
+
+.social-media i {
+    font-size:14px;
+    color:var(--Social-Media-Icons);
+}
+
+.social-media-links {
+    margin-left:13px;
+    font-family:quicksand;
+    text-transform:uppercase;
+    font-size:9px;
+    letter-spacing:1px;
+    color:var(--Social-Media-Links);
+}
+
+/*------------2ND COLUMN------------*/
+.tagsbox {
+    padding:16px;
+    background:var(--Items-Background-Color);
+}
+
+.tags {
+    margin:-6px -4px;
+}
+
+.tags a {
+    display:inline-block;
+    margin:6px 4px;
+    padding:4px 9px;
+    border:1px solid var(--Tags-Border);
+    border-radius:3px;
+    text-transform:uppercase;
+    font-size:9px;
+    letter-spacing:1px;
+    color:var(--Tags);
+}
+
+.tags a:hover {
+    background:var(--Tags-Background-On-Hover);
+    border:1px solid var(--Tags-Border-On-Hover);
+    color:var(--Tags-On-Hover);
+}
+
+.percentage-box {
+    margin-top:var(--Column-Gap);
+    padding:16px;
+    background:var(--Items-Background-Color);
+}
+
+.wheel-block {
+    display:flex;
+    justify-content:space-around;
+    -webkit-justify-content:space-around;
+    -moz-justify-content:space-around;
+}
+
+.one-wheel {}
+
+.wheel-text {
+    margin-top:16px;
+    font-family:quicksand;
+    text-transform:uppercase;
+    font-size:9px;
+    letter-spacing:1px;
+    color:var(--Percentage-Graph-Label);
+}
+
+.s-pgraph:after{box-shadow:0 0 0 transparent!important;}
+.s-pgraph:after{background:var(--Items-Background-Color)!important;}
+
+.colorbox {
+    margin-top:var(--Column-Gap);
+    padding:16px;
+    background:var(--Items-Background-Color);
+}
+
+.one-color-row {
+    margin-bottom:10px;
+    display:flex;
+}
+
+.one-color-row:last-child {margin-bottom:0px;}
+
+.one-color-row > * {
+    align-self:center;
+    -webkit-align-self:center;
+}
+
+.color {
+    width:36px;
+    height:15px;
+    border-radius:3px;
+}
+
+.color-hex, .color-rgb {
+    margin-left:12px;
+    font-family:quicksand;
+    text-transform:uppercase;
+    font-size:9px;
+    letter-spacing:1px;
+}
+
+.color-hex {color:var(--Color-Hex-Text);}
+.color-rgb {color:var(--Color-RGB-Text);}
+
+.musicbox {
+    margin-top:var(--Column-Gap);
+    padding:16px;
+    background:var(--Items-Background-Color);
+    text-align:left;
+    display:flex;
+}
+
+.musicbox > * {
+    align-self:center;
+    -webkit-align-self:center;
+}
+
+.music-controls {
+   user-select:none;
+   -webkit-user-select:none;
+   width:12px;
+   font-size:12px;
+   cursor:pointer;
+}
+
+.playy, .pausee {color:var(--Music-Controls);}
+.pausee {display:none;}
+
+.sonata {
+   margin-left:10px;
+   color:var(--Music-Note);
+}
+
+.labeltext {margin-left:13px;}
+
+.song-title {
+    font-size:12px;
+    color:var(--Song-Title);
+}
+
+.song-artist {
+    margin-top:-2px;
+    font-size:10px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--Song-Artist);
+}
+
+/*------------3RD COLUMN------------*/
+.info {
+    padding:16px;
+    background:var(--Items-Background-Color);
+    text-align:left;
+}
+
+.info-row {
+    display:flex;
+    margin-bottom:10px;
+}
+
+.info-row:last-child {margin-bottom:0px;}
+
+.info-row > * {
+    align-self:center;
+    -webkit-align-self:center;
+}
+
+.info-row svg {
+    padding:8px;
+    background:var(--Info-Icons-BG);
+    border-radius:3px;
+    width:12px;
+    height:12px;
+    color:var(--Info-Icons);
+}
+
+.info-label {
+    margin-left:12px;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    font-weight:bold;
+    color:var(--Info-Bold);
+}
+
+.info-txt {
+    margin-top:-0.3px;
+    margin-left:5px;
+    font-size:12px;
+    color:var(--Info-Text);
+}
+
+.video {
+    position:relative;
+    margin-top:var(--Column-Gap);
+    padding:16px;
+    background:var(--Items-Background-Color);
+}
+
+.vid-source {
+    display:flex;
+    margin-bottom:16px;
+    justify-content:space-between;
+    -webkit-justify-content:space-between;
+    -moz-justify-content:space-between;
+}
+
+.vid-source > * {
+    align-self:center;
+    -webkit-align-self:center;
+}
+
+.vid-i-left {
+    display:flex;
+}
+.vid-i-left > * {
+    align-self:center;
+    -webkit-align-self:center;
+}
+
+.vid-avatar {
+    width:30px;height:30px;
+    border-radius:100%;
+}
+
+.vid-text {
+    margin-left:13px;
+    text-align:left;
+}
+
+.vid-txt-top {
+    font-size:12px;
+    color:var(--Video-Top-Text-1);
+}
+
+.vid-txt-bot {
+    margin-top:-2px;
+    font-size:10px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--Video-Top-Text-2);
+}
+
+.vid-i-right svg {
+    width:13px;height:13px;
+    padding:5px 0 5px 5px;
+    color:var(--Video-Link-Right-Chevron);
+}
+
+.video iframe, .video embed, .video video {
+    width:100%;
+    height:auto;
+    border-radius:3px;
+}
+
+.v-ha {
+    position:absolute;
+    width:calc(var(--Column-3-Width) - (16px * 2));
+    display:table;
+}
+
+.v-hb {
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.v-hc {
+    margin-top:-2px;
+    user-select:none;
+    -webkit-user-select:none;
+    display:inline-block;
+    z-index:10;
+    text-align:center;
+}
+
+.v-play, .v-pause {
+    margin-top:-5px;
+    padding:10px;
+    color:var(--Video-Controls);
+    text-shadow:1px 1px 1px var(--Video-Controls-Shadow);
+    font-size:17px;
+    cursor:pointer;
+}
+
+.v-pause {display:none;}
+
+.v-p {
+    opacity:0;
+    -webkit-transition: opacity 200ms ease-in-out;
+    -moz-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+}
+
+.v-ha:hover .v-p {opacity:1;}
+
+.textbox {
+    margin-top:var(--Column-Gap);
+    padding:18px 20px;
+    background:var(--Items-Background-Color);
+    font-size:12px;
+    color:var(--Text-Box-Text);
+    line-height:1.8em;
+    text-align:justify;
 }
  
-/* SMALL PICTURE STYLING */
- 
-.leftpic {
-    grid-area: 8 / 1 / 11 / 1;
-    background: var(--accent);
-    border-radius: 0 0 0 7px;
-}
- 
-/* LONG PICTURE STYLING */
- 
-.rightpic {
-    grid-area: 1 / 4 / 11 / 4;
-    background: var(--accent);
-    border-radius: 0 7px 7px 0;
-}
- 
-/* MAIN ABOUT BOX */
- 
-.main {
-    grid-area: 2 / 2 / 8 / 4;
-    padding: 0px 15px;
-    overflow: auto;
-    border-top: 15px solid var(--aboutbg);
-    border-bottom: 15px solid var(--aboutbg);
-}
- 
-.main p {
-    margin-top: 0;
-    font-size: 10pt;
-    line-height: 20px;
-}
- 
-.main i {
-    color: var(--accent);
-}
- 
-.main b {
-    color: var(--accent);
-}
- 
-.main a {
-    color: var(--text);
-    text-decoration-color: var(--accent);
-    transition: 200ms;
-}
- 
-.main a:hover {
-    color: var(--accent);
-}
- 
-/* NAME AND INFO BOX */
- 
-.base {
-    grid-area: 9 / 2 / 11 / 4;
-    border-bottom:5px solid var(--accent);
-    text-align: center;
-}
- 
-.name {
-    width: max-content;
-    border-bottom: 1px solid var(--accent);
-    margin: 10px auto;
-    padding: none;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 28pt;
-}
- 
-.base p {
-    padding: none;
-    margin: none;
-    line-height: 3px;
-    font-family:'Khula', sans-serif;
-    font-weight: 300;
-}
- 
-/* LINKS */
- 
-.links {
-    grid-area: 8 / 2 / 8 / 4;
-    border-bottom:1px solid var(--accent);
-    border-top:1px solid var(--accent);
-}
- 
-.links ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-evenly;
-}
- 
-.links li {
-    display: inline;
-    line-height: 50px;
-}
- 
-.links a {
-    padding: 0 8px;
-    text-decoration: none;
-    color: var(--accent);
-    font-weight: 700;
-    font-style: italic;
-    transition: 400ms;
-    border-radius: 3px;
-}
- 
-.links li a:hover {
-    background: var(--accent);
-    color: var(--accenttext);
-}
- 
-/* TAGS / NAVIGATION */
- 
-.stats {
-    grid-area: 2 / 1 / 8 / 1;
-    background: var(--accent);
-    display: flex;
-}
- 
-.stats ul {
-  list-style: none;
-  padding: none;
-  margin-left: -20px;
-  color: var(--accenttext);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
- 
-.stats li {
-  padding-left: none;
-  margin: none;
-  text-indent: 0px;
-  line-height:10px;
-}
- 
-.stats a {
-    text-decoration: none;
-    color: inherit;
-    padding: 6px 8px;
-    border-radius: 3px;
-    font-weight: 300;
-    font-family: 'Poppins', sans-serif;
-    font-style: italic;
-    letter-spacing: 1px;
-    transition: 400ms;
-}
- 
-n {
-    position: relative;
-    right: 5px;
-    top: 7px;
-    font-family: 'Londrina Outline', display;
-    font-style: normal;
-    font-size: 30pt;
-}
- 
-.stats a:hover {
-    background: var(--aboutbg);
-    color: var(--text);
-}
- 
- 
-/* LONG PHOTO */
- 
-.pic1 {
-    height: 500px;
-    width: 200px;
-    
-    
-     /* 🌻 replace this url with your image for the right picture */
-    background-image: url("https://xatimg.com/image/66m6zp4m0VOR.jpg");
-    
-    
-    /* if it looks weird like it's repeating, switch the two values under 'background-size' to '100% auto' and it should correct it */
-    
-    /* if it isn't centered properly, mess around with the FIRST percentage under 'background-position' to move it left or right */
-    
-    /* if it looks too dark or light, or the contrast is off, you can edit that under 'filter'. just change the brightness and contrast values. 100% is normal. lower percentages lower the brightness/contrast, higher percentages increase it. */
-    
-    background-position: 20% 50%;
-    background-size: auto 100%; 
-    border-radius: 0 7px 7px 0;
-    filter: grayscale(0%) brightness(100%) contrast(100%);
-    mix-blend-mode: multiply;
-}
- 
-/* SMALL PHOTO */
- 
-.pic2 {
-    height: 150px;
-    width: 200px;
-    
-    
-    /* 🌻 replace this url with your image for the bottom left photo*/
-    background-image: url("https://xatimg.com/image/BcLLOq1OMQLH.gif");
-    
-    /* if it looks weird like it's repeating, switch the two values under 'background-size' to '100% auto' and it should correct it */
-    
-    /* if it isn't centered properly, mess around with the FIRST percentage under 'background-position' to move it left or right */
-    
-    /* if it looks too dark or light, or the contrast is off, you can edit that under 'filter'. just change the brightness and contrast values. 100% is normal. lower percentages lower the brightness/contrast, higher percentages increase it. */
-    
-    
-    background-position: 50% 50%;
-    background-size: auto 150%;
-    border-radius: 0 0 0 7px;
-    filter: grayscale(50%) brightness(100%) contrast(100%);
-    mix-blend-mode: multiply;
-}
-    
 </style>
-  
-      
+ 
 </head>
  
 <body>
-<div class="grid-container1">
- 
-    <div class="grid-container2">
-    <div class="rightpic"><div class="pic1"></div></div>
-    <div class="leftpic"><div class="pic2"></div></div>
-    
-    
-    
-<!-- QUOTE / LYRIC -->
-        <div class="topbar">
-            
-どこへ行っても 一番温かい場所はいつも君の指の中 ♡
 
+<!----TUMBLR CONTROLS---->
+<div id="plus-s"><i data-feather="plus"></i></div>
+
+<!----CONTAINER---->
+<div id="cont-h-1">
+<div id="cont-h-2">
+<div id="cont-v-1">
+<div id="cont-v-2">
+<div id="columnwrap">
+
+<!---------------------------------------------->
+<!----1ST COLUMN---->
+<div class="column">
+    <div class="intro-block xyz">
+    
+        <!----HEADER IMAGE---->
+        <img class="intro-header" src="https://xatimg.com/image/QwiekZJLu2XO.jpg">
+        
+        <!----HEADER AVATAR ICON IMAGE---->
+        <img class="intro-avatar" src="https://xatimg.com/image/410HAo0vu2W6.jpg">
+        
+        <div class="intro-pad">
+        
+        <!----DESCRIPTION TITLE--->
+        <div class="intro-title">𐔌   .   𝓒𝓱𝓪𝓲𝓲  .ᐟ  ֹ    ꒱</div>
+        
+        <!----DESCRIPTION---->
+        <div class="intro-desc">
+            sleepy┆crybaby┆introvert
+            <br>single┆♌︎┆♀┆chicago,IL
+            <br>──────˚₊‧ ୨୧ ‧₊˚──────
+        </div><!--end desc-->
+        
+        <!----DESCRIPTION NAV LINKS---->
+        <!--you can choose one from this list:-->
+        <!--https://feathericons.com/-->
+        <!--put the name between the quotation marks of feather=""-->
+        <div class="navlinks">
+        <a href="https://xat.com/bleach" title="home"><i data-feather="home"></i></a>
+        <a href="https://xat.me/Chica" title="waifu"><i data-feather="heart"></i></a>
+        <a href="https://xat.me/Ecchi" title="ecchi"><i data-feather="star"></i></a>
+        <a href="https://xat.me/vegito" title="nerd"><i data-feather="star"></i></a>
+        
+        <!--please do not remove the credit! thank you *o*-->
+        <a href="//glenthemes.tumblr.com" title="page by glenthemes"><i data-feather="code"></i></a>
+        </div><!--navlinks end-->
+        
+        </div><!--intro-pad--><!--do not delete this line-->
+    </div><!--intro-block--><!--do not delete this line-->
+    
+    
+    
+    <!----SOCIAL MEDIA LINKS---->
+    <!--icon list:-->
+    <!--//fontawesome.com/icons-->
+     
+    </div><!--end social media-->
+</div><!--end 1st column-->
+
+
+
+<!---------------------------------------------->
+<!----2ND COLUMN---->
+<div class="column">
+
+   
+                
+                <!--% IN TENS ONLY-->
+                <!--e.g. p10, p20, p30-->
+                <div class="s-pgraph p60">
+                
+                <div class="s-pgraph-container">
+                <div class="s-pgraph-empty"></div>
+                <div class="s-pgraph-progress"></div></div></div></a>
+                </div><!--wheel-->
+                
+              
+          
+            
+            
+            <!----PERCENTAGE GRAPH 2---->
+            <div class="one-wheel">
+            <div class="wheel">
+                <a href="//suiomi.com" class="spc">
+                
+                <!--% IN TENS ONLY-->
+                <!--e.g. p10, p20, p30-->
+                <div class="s-pgraph p80">
+                
+                <div class="s-pgraph-container">
+                <div class="s-pgraph-empty"></div>
+                <div class="s-pgraph-progress"></div></div></div></a>
+                </div><!--wheel-->
+                
+        
+            
+        </div><!--wheel-block--><!--do not delete this line-->
+    </div><!--percentage-box--><!--do not delete this line-->
+    
+   
+ 
+
+
+
+    <!--do not delete below-->
+    <div class="v-h">
+    <div class="v-ha">
+    <div class="v-hb">
+        <div class="v-hc">
+            <div class="v-play">▶</div>
+            <div class="v-p"><div class="v-pause">❚❚</div></div>
         </div>
-        
-        
-<!-- TAGS -->
-        
-        <div class="stats">
-            <ul>
-            
-            <!-- TAGS / NAVIGATION goes here. they space themselves but i'd recommend sticking with 5 - 7 tags -->
-            
-            <li><a href="https://xat.me/ecchi"><n>🪻</n>the dueler</a></li>
-            <li><a href="https://xat.me/loreseeker"><n>🪻</n>the waifu</a></li>
-            <li><a href="https://xat.me/royalty"><n>🪻</n>the queen</a></li>
-            <li><a href="https://xat.me/SlaughterSloot"><n>🪻</n>the lil bro</a></li>
-            <li><a href="https://xat.me/Vegito"><n>🪻</n>the sweetie</a></li>
-            
-            
-            </ul>
-        </div>
-        
-        
-<!-- ABOUT -->
+    </div><!--v-hb-->
+    </div><!--v-ha-->
+    </div><!--v-h-->
+    </div><!--video-->
+    
+    
+    <!----TEXTBOX---->
+    <div class="textbox xyz">
+        hello i'm the textbox.
+        <br>looks best with
+        <br>3 lines.
+    </div><!--textbox--><!--do not delete below-->
+    
+</div><!--end column-->
+</div><!--columnwrap-->
+</div><!--cont-v-2-->
+</div><!--cont-v-1-->
+</div><!--cont-h-2-->
+</div><!--cont-h-1-->
  
-<div class="main">
-        
-        <!-- about text goes in between this note -->
-  <p> <h4><i>Hey there cutie..</i></h4></p>
-            <p>I'm like a shiny pokemon I spawn rarely. You may find me online during the night, but more than likely I am afk. Sorry in advance if i'm not available. -with love always xo chai  </i></h4></p>
- <p> <h5><i>Likes♡ :</i> cows, color blue, romance, sleep, oatmilk, fall weather,shoujo's, one piece, dragonball, marvel.</h5></p>
-  <p> <h5><i>Dislikes♡ :</i>broken promises, liars, drama, anything that doesn't bring me happiness, time wasted.</h5></p>
-            
-            
-        <!-- and this note -->    
-            
-</div>
-        
- 
-<!-- LINKS -->
- 
-        <div class="links"><ul>
-            <li><a href="/urlhere">lets</a></li>
-            <li><a href="/urlhere">start with</a></li>
-            <li><a href="/urlhere">hello</a></li>
-            <li><a href="/URLHERE">🍡</a></li>
-        </ul></div>
-        
-        
-<!-- NAME AND INFO -->
- 
-        <div class="base">
-            <div class="name">Chaii</div>
-            <p>sleepy ✩ overthinker ✩ crybaby</p>
-        </div>
-        
- 
- 
-</div>
-<div class="credit"><a href="https://ebrothemes.tumblr.com" title="ebrothemes" style="color:var(--accenttext);">E</a></div>
-</div>
- 
+<script>feather.replace()</script>
 </body>
+
 </html>
